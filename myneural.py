@@ -3,7 +3,7 @@ class NeuralNetowrk():
 	def __init__(self):
 		random.seed(1)
 		
-		self.weights = random.random((3, 1))
+		self.weights = random.random((5, 1))
 	def __sigmoid(self, x):
 		return 1 / (1 + exp(-x))
 	def __sigmoid_derivative(self, x):
@@ -18,7 +18,7 @@ class NeuralNetowrk():
 		return self.__sigmoid(dot(inputs, self.weights))
 if __name__ == "__main__":
 	neural_network = NeuralNetowrk()
-	training_inputs = array([[1, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
-	training_outputs = array([[0, 1, 1, 0]]).T
+	training_inputs = array([[1, 0, 1,0,1], [1, 1, 1,1,1], [1, 0, 1,0,0], [0, 1, 1,1,1]])
+	training_outputs = array([[0, 1, 0, 1]]).T
 	neural_network.train(training_inputs, training_outputs, 10000)
-	print (neural_network.anwsear(array([1, 0, 0])))
+	print (neural_network.anwsear(array([1, 0, 0,0,1])))
